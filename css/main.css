@@ -42,7 +42,7 @@ body {
     position: relative;
 }
 
-h1 {
+h1, h2 {
     font-size: 32px;
     font-weight: 600;
     margin-top: 32px;
@@ -167,6 +167,51 @@ ul li {
     font-size: 16px;
     line-height: 1.6;
     color: #5A5A5A;
+}
+
+/* Configuração da seção Dúvidas */
+#duvidas {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 80px;
+}
+
+.duvida {
+    position: relative;
+}
+
+.duvida  h3 { 
+    border: 2px solid #FF725E;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.duvida img {
+    position: absolute;
+    top: 32px;
+    right: 24px;
+}
+
+.duvida .paragrafo {
+    border-right: 1px solid #FF725E;
+    border-bottom: 1px solid #FF725E;
+    border-left: 1px solid #FF725E;
+    border-radius: 0 0 8px 8px;
+
+    /* Eventos JS...*/
+    padding: 10px 24px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.duvida.ativa .paragrafo {
+    opacity: 1;
+    height: fit-content;
+    overflow: 24px;
+    padding: 60px 24px 10px 24px;
 }
 
 
