@@ -182,7 +182,6 @@ ul li {
     margin-right: 0px;
 }
 
-
 .botao-transparente2 {
     background-color: transparent;
     color: #EE8B48;
@@ -194,4 +193,33 @@ ul li {
     display: inline-block; 
     margin-top: 16px; 
     margin-right: 10px; 
+}
+
+/* Configuração da seção Laboratório */
+#laboratorio {
+    text-align: center;
+    padding: 80px;
+}
+
+.conteudo-laboratorio {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#laboratorio h1 {
+    margin-bottom: 24px;
+    font-size: 32px;
+}
+
+.imagem-laboratorio {
+    max-width: 700px;
+    height: auto;
+    margin: 24px 0;
+    border-radius: 10px;
+}
+
+#laboratorio p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #5A5A5A;
 }
