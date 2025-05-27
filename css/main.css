@@ -1,36 +1,46 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "League Spartan", sans-serif;
 }
 
 body {
-    color: #263138;
+    color: #000;
 }
 
 /* Header - Menu */
 .menu {
-    background-color: #FF9A6C;
+    background-color: #fffaf5;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 80px;
-}
-
-.menu nav a {
-    color: #fff;
-    font-weight: 600;
-    padding: 32px;
-    text-decoration: none;
-}
-
-/* Fixar Menu - Topo */
-.menu {
+    padding: 16px 40px;
+    border-bottom: 2px solid black;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* O header ocupa 100% da tela */ 
-    z-index: 100; /* Coloca o header acima de outros elementos*/
+    width: 100%;
+    z-index: 100;
+}
+
+.menu img {
+    height: 48px;
+}
+
+.menu nav a {
+    color: black;
+    font-weight: 600;
+    padding: 16px 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu nav a.selected {
+    color: #FE7C12;
+    font-weight: 700;
 }
 
 /* Configuração da seção Início */
@@ -40,10 +50,11 @@ body {
     gap: 32px;
     padding: 80px 80px 24px 80px;
     position: relative;
+    background-color: #fffaf5;
 }
 
-h1, h2 {
-    font-size: 32px;
+h1,h2 {
+    font-size: 35px;
     font-weight: 600;
     margin-top: 32px;
 }
@@ -52,21 +63,33 @@ h1, h2 {
     line-height: 150%;
     margin-bottom: 40px;
     margin-top: 35px;
+    font-size: 18px;
 }
 
 .botao {
-    background-color: #FF9A6C;
-    border-radius: 8px;
+    background-color: #FE7C12;
+    border: 1px solid black;
+    box-shadow: 3px 3px 0px black;
     color: #fff;
     padding: 16px 32px;
     text-decoration: none;
+    transition: 0.2s all ease;
 }
 
 .botao-transparente {
     background-color: transparent;
-    color: #FF725E;
+    color: #FE7C12;
     padding: 16px 32px;
     text-underline-offset: 4px;
+    transition: 0.2s all ease;
+}
+
+.botao-transparente:hover {
+    color: #be5703;
+}
+
+.botao:hover {
+    background-color: #db680a;
 }
 
 .absolute {
@@ -76,211 +99,3 @@ h1, h2 {
     width: 100%;
     z-index: -10;
 }
-
-/* Configuração da seção Clínica */
-#clinica {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px;
-    gap: 32px;
-    text-align: justify;
-}
-
-.conteudo-clinica {
-    flex: 1;
-}
-
-.imagem-clinica {
-    flex-shrink: 0;
-    max-width: 580px;
-    height: auto;
-}
-
-#clinica h1 {
-    margin-bottom: 32px; 
-}
-
-ul {
-    margin-top: 0;
-    margin-bottom: 24px;
-    padding-left: 30px; 
-    list-style-position: outside;  
-}
-
-ul li {
-    margin-bottom: 20px; 
-}
-
-.paragrafo2 {
-    line-height: 150%;
-    margin-bottom: 16px;
-    margin-top: 0;
-}
-
-.botao2 {
-    background-color: #FF9A6C;
-    border-radius: 8px;
-    color: #fff;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin-right: 0;
-}
-
-.botao-transparente2 {
-    background-color: transparent;
-    color: #FF725E;
-    padding: 16px 32px;
-    text-underline-offset: 4px;
-}
-
-.conteudo-clinica a {
-    display: inline-block; 
-    margin-top: 16px; 
-    margin-right: 10px; 
-}
-
-/* Configuração da seção Farmácia */
-#farmacia {
-    text-align: center;
-    padding: 80px;
-}
-
-.conteudo-farmacia {
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-#farmacia h1 {
-    margin-bottom: 24px;
-    font-size: 32px;
-    color: #263138;
-}
-
-.imagem-farmacia {
-    max-width: 700px;
-    height: auto;
-    margin: 24px 0;
-}
-
-#farmacia p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #5A5A5A;
-}
-
-/* Configuração da seção Dúvidas */
-#duvidas {
-    display: flex;
-    align-items: center;
-    gap: 64px;
-    padding: 80px;
-}
-
-.duvida {
-    position: relative;
-}
-
-.duvida  h3 { 
-    border: 2px solid #FF725E;
-    border-radius: 8px;
-    padding: 24px;
-}
-
-.duvida img {
-    position: absolute;
-    top: 32px;
-    right: 24px;
-}
-
-.duvida .paragrafo {
-    border-right: 1px solid #FF725E;
-    border-bottom: 1px solid #FF725E;
-    border-left: 1px solid #FF725E;
-    border-radius: 0 0 8px 8px;
-
-    /* Eventos JS...*/
-    padding: 10px 24px;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: .2s;
-}
-
-.duvida.ativa .paragrafo {
-    opacity: 1;
-    height: fit-content;
-    overflow: 24px;
-    padding: 60px 24px 10px 24px;
-}
-
-/* Footer */
-footer {
-    background-color: #FFE6DC;
-    padding: 64px 80px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    color: #263138;
-}
-
-footer h2 {
-    color: #FF725E;
-    margin-bottom: 16px;
-}
-
-footer h3 {
-    margin-bottom: 16px;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer a {
-    text-decoration: none;
-    color: #263138;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-footer p a {
-    color: #FF725E;
-}
-
-footer div p {
-    margin-bottom: 17px;
-}
-
-footer p a:hover {
-    text-decoration: underline;
-}
-
-.footer-credits {
-    background-color: #263138;
-    color: #fff;
-    text-align: center;
-    padding: 24px;
-}
-
-.footer-credits a {
-    color: #FF725E;
-    text-decoration: none;
-}
-
-.footer-credits a:hover {
-    text-decoration: underline;
-}
-
-
-
-
-
-
-
-
-
-
